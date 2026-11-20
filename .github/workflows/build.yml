@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: unzip -o "jarvis-app.zip 2.zip"
+      - run: ls *.zip | sort -V | while read -r z; do unzip -o "$z"; done
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
